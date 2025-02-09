@@ -16,19 +16,25 @@ async function main() {
   `)
   );
 
-  const captchaSolverResponse = await prompt(
-    chalk.yellow(
-      `Choose CAPTCHA solver : \n1.2Captcha\n2.Anti-Captcha\n3.Gemini\nEnter number: `
-    )
-  );
+  // const captchaSolverResponse = await prompt(
+  //   chalk.yellow(
+  //     `Choose CAPTCHA solver : \n1.2Captcha\n2.Anti-Captcha\n3.Gemini\nEnter number: `
+  //   )
+  // );
+  const captchaSolverResponse = "1"
   const use2Captcha = captchaSolverResponse === "1";
   const useAntiCaptcha = captchaSolverResponse === "2";
   const useGemini = captchaSolverResponse === "3";
-  const refCode = await prompt(chalk.yellow("Enter Referral Code: "));
+
+  // const refCode = await prompt(chalk.yellow("Enter Referral Code: "));
+  const refCode = "67965e0dce7cd"
+
   // const toAddress = await prompt(
   //   chalk.yellow("Enter target address for token transfer: ")
   // );
-  const count = parseInt(await prompt(chalk.yellow("How many do you want? ")));
+  
+  // const count = parseInt(await prompt(chalk.yellow("How many do you want? ")));
+  const count = 1000;
   const proxiesLoaded = loadProxies();
   if (!proxiesLoaded) {
     logMessage(null, null, "No Proxy. Using default IP", "warning");
